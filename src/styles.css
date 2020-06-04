@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Kanit:ital,wght@1,500&family=Raleway:ital,wght@1,500&display=swap");
+
+.App {
+  text-align: center;
+}
+
+body {
+  background-image: linear-gradient(
+    to right top,
+    #d16ba5,
+    #c777b9,
+    #ba83ca,
+    #aa8fd8,
+    #9a9ae1,
+    #8aa7ec,
+    #79b3f4,
+    #69bff8,
+    #52cffe,
+    #41dfff,
+    #46eefa,
+    #5ffbf1
+  );
+}
+.Search-Bar {
+  border-radius: 10px;
+  width: 50vw;
+  padding: 0.7em;
+  margin: 1.5em;
+  background-color: #edf6f9;
+  border-width: 0;
+}
+
+.Search-Bar :focus {
+  outline: none;
+}
+
+.Search-Button {
+  width: 100px;
+  background-color: #4ea8de;
+  color: white;
+  padding: 0.7em;
+  border-radius: 10px;
+  border-width: 0em;
+}
+
+.Cards-Content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+img {
+  font-size: 100px;
+  width: 120px;
+  height: 75px;
+  margin: 10px;
+}
+
+h1,
+h3 {
+  font-family: "Raleway", sans-serif;
+  padding: 0em 0.7em;
+}
+
+h1 {
+  color: #0c120c;
+  font-family: "Kanit", sans-serif;
+  font-size: 2em; 
+}
+
+svg {
+  margin: 0em 0.5em;
+  font-size: 1em;
+}
+
+.Card {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  margin: 1em;
+  padding: 0.2em;
+  background-image: linear-gradient(
+    to left bottom,
+    #aff8c8,
+    #a5f7c1,
+    #9bf6ba,
+    #90f5b3,
+    #85f4ac
+  );
+  border-radius: 15px;
+  box-shadow: 10px 20px rgba(119, 243, 160, 0.445);
+}
+
+.Card:hover {
+  cursor: pointer;
+}
+.Success {
+  background-color: #5cb85c;
+  border-radius: 10px;
+  padding: 0.3em;
+  margin: 0.5em;
+}
+
+.Danger {
+  background-color: #d9534f;
+  border-radius: 10px;
+  padding: 0.3em;
+  margin: 0.5em;
+}
+
+h2 {
+  font-family: "Acme", sans-serif;
+  font-size: 1.5em;
+}
+
+input:focus,
+input.form-control:focus {
+  outline: none !important;
+}
+
+.Popupss {
+  margin: 0.8em;
+  color: white;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translate(20%);
+  z-index: 1;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  width: 70vw;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.603);
+  border-radius: 15px;
+}
+
+.Popupss:hover{
+  cursor: pointer;
+}
+
+.Popupss h1,
+.Popupss h2,
+.Popupss h3 {
+  color: white;
+  margin: 0.5em;
+}
+
+.Popupss h1{
+  background-image: radial-gradient( circle farthest-corner at 12.3% 19.3%,  rgba(85,88,218,1) 0%, rgba(95,209,249,1) 100.2% );
+  border-radius: 15px;
+  font-size: 1.8em;
+}
+
+.Popupss {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.close {
+  margin: 3em;
+  color: #0c120c;
+}
+
+@media only screen and (max-width: 720px) {
+  .Popupss h1,
+  .Popupss h2,
+  .Popupss h3 {
+    color: white;
+    font-size:1.2em;
+  }
+
+
+  .Cards-Content h1, .Cards-Content h2{
+    font-size: 1.4em;
+  }
+
+  .Success , .Danger{
+    font-size: 01em;
+  }
+
+  img {
+    font-size: 50px;
+    width: 70px;
+    height: 50px;
+    margin: 05px;
+  }
+}
