@@ -5,7 +5,7 @@ import "./styles.css";
 
 const App = () => {
   const [countries, setCountries] = useState([]);
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const [pass, setPass] = useState("home");
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const App = () => {
   };
 
   const queries = evt => {
-    const val = ttextInput.value;
+    const val = textInput.value;
     textInput.value = ""
     evt.preventDefault();
     if (val !== "" && val !== " ") {
