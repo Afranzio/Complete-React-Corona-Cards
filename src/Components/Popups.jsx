@@ -1,4 +1,5 @@
 import React from "react";
+import {Bar} from "react-chartjs-2"
 
 const Popup = ({ datas, data}) => {
   if (data !== "home" && data !== "") {
@@ -24,6 +25,20 @@ const Popup = ({ datas, data}) => {
           <h3>Populations = {country.population}</h3>
           <h3>Tests Taken = {country.tests}</h3>
         </div>
+        <Bar 
+        data = {{
+          labels : ["Confirmed","Recovered","Deaths"],
+          datasets : [{
+            label: "People",
+            backgroundColor : ["rgb(255,0,0,0.5)","rgb(0,255,0,0.5)","rgb(0,0,255,0.5)"],
+            data : [country.cases,country.recovered,country.deaths]
+          }]
+        }}
+        options = {{
+          legend : {display : false},
+          title : {display : true ,text: `Current of state in ${data}`}
+        }}
+         />
       </div>
     );
   } else {
