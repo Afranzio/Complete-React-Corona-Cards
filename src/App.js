@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Country from "./Components/CountryCards";
-import Popup from "./Components/Popups"
+import Popup from "./Components/Popups";
 import "./styles.css";
 
 const App = () => {
@@ -22,27 +22,26 @@ const App = () => {
     setCountries(data);
   };
 
-  const queries = evt => {
-    const val = textInput.value;
-    textInput.value = ""
-    evt.preventDefault();
-    if (val !== "" && val !== " ") {
-      if (val.length <= 3) {
-        setPass(val.toUpperCase());
-      } else {
-        setPass(
-          val.replace(/\w\S*/g, function(txt) {
-            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-          })
-        );
-      }
-    }
-    setShow(!show);
+  const countryName = countries.map(a => a.country);
+
+  const MakeItem = function(X) {
+    return <option key={X} value={X}>{X}</option>;
   };
 
   const closes = () => {
-    setShow(!show)
-  }
+    setShow(!show);
+  };
+
+  const textInput = e => {
+    e.preventDefault();
+    if (e.target.value !== "--Select The Country--") {
+      setPass(e.target.value);
+      closes();
+    }
+    else{
+      return null;
+    }
+  };
 
   return (
     <div className="App">
@@ -62,15 +61,13 @@ const App = () => {
           />
         </svg>
       </h1>
-      <form onSubmit={queries}>
-        <input
-          type="text"
-          ref={element => textInput = element}
-          className="Search-Bar"
-        />
-        <button className="Search-Button" type="submit">
-          SEARCH
-        </button>
+      <form onSubmit = {textInput}>
+        <select className="Search-Bar" onChange={textInput}>
+          <option value="value" selected disabled hidden>
+            --Select The Country--
+          </option>
+          {countryName.map(MakeItem)}
+        </select>
       </form>
       <div className="Cards-Content">
         {countries.map(country => (
@@ -81,12 +78,16 @@ const App = () => {
             deaths={country.deaths}
             recovered={country.recovered}
             imgs={country.countryInfo.flag}
-            datas={countries} 
+            datas={countries}
           />
         ))}
       </div>
-      <div className = "Popupss" style={show ? { display: "none" } : {}} onClick = {closes} >
-        <Popup datas={countries} data= {pass} />
+      <div
+        className="Popupss"
+        style={show ? { display: "none" } : {}}
+        onClick={closes}
+      >
+        <Popup datas={countries} data={pass} />
       </div>
     </div>
   );
