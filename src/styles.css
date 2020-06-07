@@ -22,6 +22,7 @@ body {
   );
 }
 .Search-Bar {
+  font-family: Raleway,sans-serif;
   border-radius: 10px;
   width: 50vw;
   padding: 0.7em;
@@ -70,6 +71,16 @@ h1 {
 svg {
   margin: 0em 0.5em;
   font-size: 1em;
+}
+
+.all{
+  margin-top: 5em;
+  display: flex;
+}
+
+.Charts{
+  margin:10em 2em;
+  width:30vw;
 }
 
 .Card {
@@ -133,7 +144,7 @@ input.form-control:focus {
   justify-content: center;
   width: 70vw;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.603);
+  background-color: rgba(0, 0,50);
   border-radius: 15px;
 }
 
@@ -154,6 +165,10 @@ input.form-control:focus {
   font-size: 1.4em;
 }
 
+.Popupss h2{
+  font-size: 2em;
+}
+
 .Popupss {
   display: flex;
   flex-direction: row-reverse;
@@ -172,8 +187,8 @@ input.form-control:focus {
     font-size:1em;
   }
 
-  Bar{
-    display:none;
+  .Charts{
+    display: none;
   }
 
   .Cards-Content h1, .Cards-Content h2{
