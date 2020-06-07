@@ -33,12 +33,12 @@ const Country = ({
         <h3 className="Success">Total_Recovered = {recovered}</h3>
         <img src={imgs} alt={country} />
       </div>
-        <div className="Popupss" style={!show ? { display: "none" } : {}} onClick = {closes}>
-          <Popup
-            datas={datas}
-            data={click}
-          />
-        </div>
+      <div className="Popupss" style={!show ? { display: "none" } : {}} onClick = {closes}>
+        <Popup
+          datas={datas}
+          data={click}
+        />
+      </div>
     </div>
   );
 };

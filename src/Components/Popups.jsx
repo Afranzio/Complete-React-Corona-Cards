@@ -36,7 +36,7 @@ const Popup = ({ datas, data}) => {
             }]
           }}
           options = {{
-            legend : {display: 'none' },
+            legend : {display: 'none'},
             title : {display : true ,text: `Current of state in ${data}`}
           }}
           />
